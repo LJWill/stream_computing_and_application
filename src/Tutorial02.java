@@ -13,13 +13,19 @@ public class Tutorial02{
         int[] freq = new int[n]; // frequencies in each bin
         for (int i = 0; i < m; i++) {
         	int j = StdRandom.uniform(n);
-        	System.out.println("balls: " + j);
+        	freq[j] += 1;
+        	System.out.println(j);        	
+        }
+        
+        for(int i=0; i<freq.length; i++) {
+        	System.out.println("bin no: " + i + ", freq: " + freq[i]);
         }
         
         int numWays = calNumWays(m, n);
         System.out.println("Number of ways: " + numWays);
         
         double[] normalized = new double[n];
+        
         StdStats.plotBars(normalized);
 
 	}
